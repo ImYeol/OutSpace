@@ -19,10 +19,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+          primarySwatch: Colors.blue,
+          backgroundColor: Colors.white,
+          primaryColor: Colors.white),
       getPages: [
         GetPage(name: '/', page: () => const HomePage()),
         GetPage(name: '/login', page: () => const LoginPage()),

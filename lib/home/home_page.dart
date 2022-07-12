@@ -1,28 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:out_space/util/header_textview.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      child: Row(
-        children: [
-          headerTextView(),
-          renterButton(),
-          lessorButton(),
-          loginButton()
-        ],
-      ),
-    );
+    return SafeArea(
+        child: Scaffold(
+      body: widgetBody(),
+    ));
   }
 
-  Widget headerTextView() {
-    return const Align(
-      alignment: Alignment.center,
-      child: Text("창고창고"),
+  Widget widgetBody() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        HeaderTextView(text: "창고창고"),
+        renterButton(),
+        lessorButton(),
+        loginButton()
+      ],
     );
   }
 

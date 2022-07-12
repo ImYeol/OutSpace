@@ -6,11 +6,16 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(children: [
-        HeaderTextView(text: "Welcome to 창고창고"),
-        googleLoginButton()
-      ]),
+    return SafeArea(
+        child: Scaffold(
+      body: widgetBody(),
+    ));
+  }
+
+  Widget widgetBody() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [HeaderTextView(text: "Welcome to 창고창고"), googleLoginButton()],
     );
   }
 

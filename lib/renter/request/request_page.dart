@@ -6,7 +6,7 @@ class RequestPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(children: const [
+    return Column(children: const [
       HeaderTextView(text: "요청서"),
     ]);
   }

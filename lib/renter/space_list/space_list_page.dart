@@ -6,10 +6,16 @@ class SpaceListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        children: const [HeaderTextView(text: "내 주변 공간 목록")],
-      ),
+    return SafeArea(
+        child: Scaffold(
+      body: widgetBody(),
+    ));
+  }
+
+  Widget widgetBody() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [HeaderTextView(text: "내 주변 공간 목록")],
     );
   }
 }

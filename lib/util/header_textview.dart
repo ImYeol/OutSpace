@@ -10,10 +10,13 @@ class HeaderTextView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(left: 10, right: 10),
+      padding: const EdgeInsets.all(30),
       child: Align(
         alignment: Alignment.center,
-        child: Text(text),
+        child: Text(
+          text,
+          style: TextStyle(fontSize: 30),
+        ),
       ),
     );
   }
