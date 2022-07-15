@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:out_space/chat/make_deal_page.dart';
 import 'package:out_space/util/header_textview.dart';
 
 class HomePage extends StatelessWidget {
@@ -17,10 +18,11 @@ class HomePage extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        HeaderTextView(text: "창고창고"),
+        const HeaderTextView(text: "창고창고"),
         renterButton(),
         lessorButton(),
-        loginButton()
+        loginButton(),
+        makeDealButton(),
       ],
     );
   }
@@ -43,6 +45,14 @@ class HomePage extends StatelessWidget {
     return ElevatedButton(
       child: const Text("로그인"),
       onPressed: () => Get.toNamed('/login'),
+    );
+  }
+
+  // for debug
+  Widget makeDealButton() {
+    return ElevatedButton(
+      child: const Text("채팅"),
+      onPressed: () => Get.to(MakeDealPage()),
     );
   }
 }
