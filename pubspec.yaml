@@ -54,6 +54,7 @@ dev_dependencies:
 
   # ui
   google_fonts:
+  carousel_slider: ^4.1.1
 
   # auth
 

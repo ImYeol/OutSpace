@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:out_space/lessor/manage/space_detail_page.dart';
-import 'package:out_space/lessor/manage/space_manage_page.dart';
+import 'package:out_space/home/home_page.dart';
+import 'package:out_space/host/manage/space_detail_page.dart';
+import 'package:out_space/host/manage/space_manage_page.dart';
 import 'package:out_space/login/login_page.dart';
-import 'package:out_space/renter/request/request_page.dart';
-import 'package:out_space/renter/space_list/space_list_page.dart';
+import 'package:out_space/guest/request/request_page.dart';
+import 'package:out_space/guest/space/space_list_page.dart';
 
 import 'home/home_page.dart';
 import 'package:get/get.dart';
@@ -29,8 +30,8 @@ class MyApp extends StatelessWidget {
         GetPage(name: '/request', page: () => const RequestPage()),
         GetPage(name: '/space/list', page: () => const SpaceListPage()),
         GetPage(name: '/space/manage', page: () => const SpaceManagePage()),
-        GetPage(name: '/space/detail', page: () => const SpaceDetailPage()),
       ],
+      home: const HomePage(),
     );
   }
 }
