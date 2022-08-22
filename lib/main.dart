@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:out_space/const/app_theme.dart';
 import 'package:out_space/home/home_page.dart';
 import 'package:out_space/host/manage/space_detail_page.dart';
 import 'package:out_space/host/manage/space_manage_page.dart';
@@ -20,10 +21,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      theme: ThemeData(
-          primarySwatch: Colors.blue,
-          backgroundColor: Colors.white,
-          primaryColor: Colors.white),
+      theme: AppTheme.lightTheme,
       getPages: [
         GetPage(name: '/', page: () => const HomePage()),
         GetPage(name: '/login', page: () => const LoginPage()),
