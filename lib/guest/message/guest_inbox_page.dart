@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:out_space/const/app_constants.dart';
+import 'package:get/get.dart';
+import 'package:out_space/guest/message/guest_inbox_message_view.dart';
+import 'package:out_space/guest/message/guest_inbox_notification_view.dart';
 
 class GuestInboxPage extends StatefulWidget {
   const GuestInboxPage({Key? key}) : super(key: key);
@@ -26,7 +29,11 @@ class _GuestInboxPageState extends State<GuestInboxPage>
           horizontal: AppConstants.defaultHorizontalPaddingSize,
           vertical: AppConstants.defaultVerticalPaddingSize),
       child: Column(
-        children: [_buildPageTitleView("메시지함"), _buildTabBar()],
+        children: [
+          _buildPageTitleView("메시지함"),
+          _buildTabBar(),
+          _buildTabBarView()
+        ],
       ),
     );
   }
@@ -34,7 +41,7 @@ class _GuestInboxPageState extends State<GuestInboxPage>
   Widget _buildPageTitleView(String title) {
     return Text(
       title,
-      style: AppConstants.defaultMainTitleStyle,
+      style: Get.textTheme.titleLarge,
     );
   }
 
@@ -50,9 +57,12 @@ class _GuestInboxPageState extends State<GuestInboxPage>
 
   Widget _buildTabBarMenu(String title) {
     return Container(
-      height: 80,
+      height: 60,
       alignment: Alignment.center,
-      child: Text(title),
+      child: Text(
+        title,
+        style: Get.textTheme.labelLarge,
+      ),
     );
   }
 
@@ -60,9 +70,9 @@ class _GuestInboxPageState extends State<GuestInboxPage>
     return Expanded(
         child: TabBarView(
       controller: _tabController,
-      children: const [
-        Text("tab1"),
-        Text("tab2"),
+      children: [
+        GuestInboxMessageView(),
+        GuestInboxNotificationView(),
       ],
     ));
   }

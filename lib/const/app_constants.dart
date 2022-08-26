@@ -8,9 +8,4 @@ class AppConstants {
   // view config
   static const double defaultHorizontalPaddingSize = 20.0;
   static const double defaultVerticalPaddingSize = 20.0;
-
-  static final TextStyle defaultMainTitleStyle = GoogleFonts.lato(
-      color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold);
-  static final TextStyle defaultSubTitleStyle = GoogleFonts.lato(
-      color: Colors.black, fontSize: 20, fontWeight: FontWeight.normal);
 }

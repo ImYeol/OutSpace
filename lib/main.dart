@@ -6,11 +6,15 @@ import 'package:out_space/host/manage/space_manage_page.dart';
 import 'package:out_space/login/login_page.dart';
 import 'package:out_space/guest/request/request_page.dart';
 import 'package:out_space/guest/space/space_list_page.dart';
-
+import 'package:out_space/repository/app_repository.dart';
 import 'home/home_page.dart';
 import 'package:get/get.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+  await AppRepository().initStorage();
   runApp(const MyApp());
 }
 

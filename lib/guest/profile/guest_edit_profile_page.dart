@@ -38,7 +38,7 @@ class _GuestEditProfilePageState extends State<GuestEditProfilePage> {
               children: [
                 Text(
                   "개인정보 수정",
-                  style: AppConstants.defaultMainTitleStyle,
+                  style: Get.textTheme.titleLarge,
                 ),
                 // menu items
                 _buildFormWidget()

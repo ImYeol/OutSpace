@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:out_space/const/app_constants.dart';
 import 'package:get/get.dart';
+import 'package:out_space/const/app_mode.dart';
 import 'package:out_space/guest/profile/guest_edit_profile_page.dart';
+import 'package:out_space/home/home_page.dart';
+import 'package:out_space/repository/app_repository.dart';
 
 class GuestProfilePage extends StatelessWidget {
   const GuestProfilePage({Key? key}) : super(key: key);
@@ -16,10 +19,14 @@ class GuestProfilePage extends StatelessWidget {
         children: [
           _buildProfileHeader(),
           Divider(
+            thickness: 1,
             height: 50,
           ),
           _buildAccountManagementMenu(),
-          Divider(height: 50),
+          Divider(
+            thickness: 1,
+            height: 50,
+          ),
           _buildHostModeSwitchMenu()
         ],
       ),
@@ -34,7 +41,7 @@ class GuestProfilePage extends StatelessWidget {
           Icons.person_rounded,
           size: 50,
         ),
-        Text("홍길동님", style: AppConstants.defaultMainTitleStyle),
+        Text("홍길동님", style: Get.textTheme.titleMedium),
       ],
     );
   }
@@ -43,7 +50,7 @@ class GuestProfilePage extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("계정 관리", style: AppConstants.defaultSubTitleStyle),
+        Text("계정 관리", style: Get.textTheme.titleLarge),
         SizedBox(
           height: 20,
         ),
@@ -63,7 +70,10 @@ class GuestProfilePage extends StatelessWidget {
         iconData,
         size: 25,
       ),
-      title: Text(title),
+      title: Text(
+        title,
+        style: Get.textTheme.labelMedium,
+      ),
       onTap: () => Get.to(router),
       trailing: Icon(
         Icons.keyboard_arrow_right_outlined,
@@ -81,7 +91,11 @@ class GuestProfilePage extends StatelessWidget {
           alignment: Alignment.center,
           child: Text("호스트 모드 전환"),
         ),
-        onPressed: () {},
+        onPressed: () {
+          final repository = AppRepository();
+          repository.setAppMode(AppMode.host);
+          Get.off(const HomePage(), preventDuplicates: false);
+        },
       ),
     );
   }

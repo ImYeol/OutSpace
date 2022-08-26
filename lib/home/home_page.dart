@@ -8,6 +8,8 @@ import 'package:out_space/host/profile/host_profile_page.dart';
 import 'package:out_space/host/schedule/calendar_page.dart';
 import 'package:out_space/guest/profile/guest_profile_page.dart';
 import 'package:out_space/guest/space/space_list_page.dart';
+import 'package:get/get.dart';
+import 'package:out_space/repository/app_repository.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -18,7 +20,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
-  AppMode _appMode = AppMode.guest;
+  int _appMode = AppMode.guest;
+  late AppRepository _repository;
 
   final List<String> _pageTitlesForGuest = [
     '검색',
@@ -60,6 +63,19 @@ class _HomePageState extends State<HomePage> {
   ];
 
   @override
+  void initState() {
+    super.initState();
+    _repository = AppRepository();
+    _appMode = _repository.getAppMode();
+    print("initState");
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
@@ -87,6 +103,8 @@ class _HomePageState extends State<HomePage> {
                       _pageTitlesForGuest[index])),
           selectedItemColor: AppConstants.selectedItemColor,
           unselectedItemColor: AppConstants.nonSelectedItemColor,
+          selectedLabelStyle: Get.textTheme.labelSmall,
+          unselectedLabelStyle: Get.textTheme.labelSmall,
         ),
       ),
     );

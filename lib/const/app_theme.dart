@@ -3,59 +3,56 @@ import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
   static final lightTheme = ThemeData(
-      scaffoldBackgroundColor:  Colors.white,
-      backgroundColor: Colors.white,
-      // 밝기는 어둡게
-      brightness: Brightness.dark,
-      // Color의 색상의 배열값? 색의 농도를 의미하며 100부터 900까지 100단위로 설정 가능
-      // 사용자와 상호작용하는 앨리먼트들의 기본 색상
-      primaryColor: Colors.lightBlue[800],
-      // 사용할 폰트
-      fontFamily: 'Lato',
-      // 텍스트 테마 설정
-      // https://api.flutter.dev/flutter/material/TextTheme-class.html
-      // https://material.io/design/typography/the-type-system.html#applying-the-type-scale
-      textTheme: TextTheme(
-        headlineLarge: GoogleFonts.lato(
-          color: Colors.black, fontSize: 32, fontWeight: FontWeight.bold),
-        headlineMedium: GoogleFonts.lato(
-          color: Colors.black, fontSize: 25, fontWeight: FontWeight.normal),
-        headlineSmall: GoogleFonts.lato(
-          color: Colors.black, fontSize: 25, fontWeight: FontWeight.normal),
-        titleLarge: GoogleFonts.lato(
-          color: Colors.black, fontSize: 25, fontWeight: FontWeight.normal),
-        titleMedium: GoogleFonts.lato(
-          color: Colors.black, fontSize: 20, fontWeight: FontWeight.normal),
-        titleSmall: GoogleFonts.lato(
-          color: Colors.black, fontSize: 20, fontWeight: FontWeight.normal),
-        bodyLarge: GoogleFonts.lato(
-          color: Colors.black, fontSize: 20, fontWeight: FontWeight.normal),
-        bodyMedium: GoogleFonts.lato(
-          color: Colors.black, fontSize: 20, fontWeight: FontWeight.normal),
-        bodySmall: GoogleFonts.lato(
-          color: Colors.black, fontSize: 20, fontWeight: FontWeight.normal),
-        subtitle1: GoogleFonts.lato(
-          color: Colors.black, fontSize: 25, fontWeight: FontWeight.normal),
-        subtitle2: GoogleFonts.lato(
-          color: Colors.black, fontSize: 25, fontWeight: FontWeight.normal),
-        labelLarge: GoogleFonts.lato(
-          color: Colors.black, fontSize: 25, fontWeight: FontWeight.normal),
-        labelMedium: GoogleFonts.lato(
-          color: Colors.black, fontSize: 25, fontWeight: FontWeight.normal),
-        labelSmall: GoogleFonts.lato(
-          color: Colors.black, fontSize: 25, fontWeight: FontWeight.normal),
-        button: GoogleFonts.lato(
-          color: Colors.black, fontSize: 25, fontWeight: FontWeight.normal),
-        caption: GoogleFonts.lato(
-          color: Colors.black, fontSize: 25, fontWeight: FontWeight.normal),
-        overline: GoogleFonts.lato(
-          color: Colors.black, fontSize: 25, fontWeight: FontWeight.normal),
-      ), 
-      colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue).copyWith(secondary: Colors.cyan[600]),
+    scaffoldBackgroundColor: Colors.white,
+    backgroundColor: Colors.white,
+    // 밝기는 어둡게
+    brightness: Brightness.light,
+    // Color의 색상의 배열값? 색의 농도를 의미하며 100부터 900까지 100단위로 설정 가능
+    // 사용자와 상호작용하는 앨리먼트들의 기본 색상
+    primaryColor: Colors.lightBlue[800],
+    // 사용할 폰트
+    fontFamily: 'Poppins',
+    // 텍스트 테마 설정
+    // https://api.flutter.dev/flutter/material/TextTheme-class.html
+    // https://material.io/design/typography/the-type-system.html#applying-the-type-scale
+    textTheme: TextTheme(
+      displayLarge: GoogleFonts.poppins(
+          color: Colors.black, fontSize: 57, fontWeight: FontWeight.w400),
+      displayMedium: GoogleFonts.poppins(
+          color: Colors.black, fontSize: 45, fontWeight: FontWeight.w400),
+      displaySmall: GoogleFonts.poppins(
+          color: Colors.black, fontSize: 36, fontWeight: FontWeight.w400),
+      headlineLarge: GoogleFonts.poppins(
+          color: Colors.black, fontSize: 32, fontWeight: FontWeight.w400),
+      headlineMedium: GoogleFonts.poppins(
+          color: Colors.black, fontSize: 28, fontWeight: FontWeight.w400),
+      headlineSmall: GoogleFonts.poppins(
+          color: Colors.black, fontSize: 24, fontWeight: FontWeight.w400),
+      titleLarge: GoogleFonts.poppins(
+          color: Colors.black, fontSize: 22, fontWeight: FontWeight.w400),
+      titleMedium: GoogleFonts.poppins(
+          color: Colors.black, fontSize: 20, fontWeight: FontWeight.w500),
+      titleSmall: GoogleFonts.poppins(
+          color: Colors.black, fontSize: 18, fontWeight: FontWeight.w500),
+      bodyLarge: GoogleFonts.poppins(
+          color: Colors.black, fontSize: 16, fontWeight: FontWeight.w400),
+      bodyMedium: GoogleFonts.poppins(
+          color: Colors.black, fontSize: 14, fontWeight: FontWeight.w400),
+      bodySmall: GoogleFonts.poppins(
+          color: Colors.black, fontSize: 12, fontWeight: FontWeight.w400),
+      // button
+      labelLarge: GoogleFonts.poppins(
+          color: Colors.black, fontSize: 18, fontWeight: FontWeight.w500),
+      // caption
+      labelMedium: GoogleFonts.poppins(
+          color: Colors.black, fontSize: 14, fontWeight: FontWeight.w500),
+      // overline
+      labelSmall: GoogleFonts.poppins(
+          color: Colors.black, fontSize: 12, fontWeight: FontWeight.w500),
+    ),
+    colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue)
+        .copyWith(secondary: Colors.cyan[600]),
   );
 
-  static final darkTheme = ThemeData(
-    
-  );
-  
+  static final darkTheme = ThemeData();
 }
